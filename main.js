@@ -22,3 +22,21 @@ senha += alfabeto[numeroAleatorio];
 }
 campoSenha.value = senha;
 }
+function classificarIdade(idade) {
+    let classificacao = '';
+    let cor = '';
+  
+    if (idade < 12) {
+      classificacao = 'Criança';
+      cor = '\x1b[44m'; // Fundo azul
+    } else if (idade >= 12 && idade < 18) {
+      classificacao = 'Adolescente';
+      cor = '\x1b[43m'; // Fundo amarelo
+    } else {
+      classificacao = 'Adulta';
+      cor = '\x1b[42m'; // Fundo verde
+    }
+  
+    // Exibe a barra colorida com a classificação
+    console.log(`${cor} ${classificacao.padEnd(20)} \x1b[0m`);
+  }
